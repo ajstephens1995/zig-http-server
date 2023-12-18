@@ -4,8 +4,9 @@ const std = @import("std");
 const http = std.http;
 const log = std.log.scoped(.server);
 
-const server_addr = "127.0.0.1";
-const server_port = 8000;
+//const server_addr = "127.0.0.1";
+const server_addr = "172.233.212.24";
+const server_port = 80;
 
 // Run the server and handle incoming requests.
 fn runServer(server: *http.Server, allocator: std.mem.Allocator) !void {
