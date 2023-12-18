@@ -71,8 +71,7 @@ fn handleRequest(response: *http.Server.Response, allocator: std.mem.Allocator) 
 
         if (response.request.method != .HEAD) {
             try response.writeAll("Zig ");
-            //try response.writeAll("Bits!\n");
-            try response.writeAll("Bits!");
+            try response.writeAll("Bits!\n");
             try response.finish();
         }
 
