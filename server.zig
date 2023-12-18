@@ -60,7 +60,7 @@ fn handleRequest(response: *http.Server.Response, allocator: std.mem.Allocator) 
         if (std.mem.indexOf(u8, response.request.target, "?chunked") != null) {
             response.transfer_encoding = .chunked;
         } else {
-            response.transfer_encoding = .{ .content_length = 10 };
+            response.transfer_encoding = .{ .content_length = 9 };
         }
 
         // Set "content-type" header to "text/plain".
@@ -71,7 +71,7 @@ fn handleRequest(response: *http.Server.Response, allocator: std.mem.Allocator) 
 
         if (response.request.method != .HEAD) {
             try response.writeAll("Zig ");
-            try response.writeAll("Bits!\n");
+            try response.writeAll("Bits!");
             try response.finish();
         }
 
